@@ -10,9 +10,7 @@ import shap
 import plotly.graph_objects as go
 from matplotlib.image import imread
 from zipfile import ZipFile
-import matplotlib
 
-from sklearn.cluster import KMeans
 from sklearn.neighbors import NearestNeighbors
 
 # st.set_page_config(layout="wide")
