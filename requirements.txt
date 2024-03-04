@@ -7,3 +7,4 @@ scikit_learn==1.4.1.post1
 seaborn==0.13.2
 shap==0.44.1
 streamlit==1.31.1
+lightgbm==4.3.0
