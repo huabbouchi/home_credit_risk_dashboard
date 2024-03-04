@@ -196,8 +196,7 @@ with descriptive:
             # @st.cache_resource()
             def plot():                
                 fig, ax = plt.subplots()
-                px.density_contour(dash_df, y='DAYS_BIRTH', color='CODE_GENDER', marginal_y="histogram")
-                # sns.kdeplot(dash_df['DAYS_BIRTH'], label = 'Age', hue=dash_df['CODE_GENDER']) #log_scale=True, 
+                sns.kdeplot(data=dash_df, x='DAYS_BIRTH', label = 'Age', hue='CODE_GENDER') #log_scale=True, 
                 plt.axvline(x=dash_df[dash_df.index==id].DAYS_BIRTH.values[0], ymax=0.95, color='firebrick', ls='--')
                 return fig            
             st.pyplot(plot())
@@ -206,7 +205,7 @@ with descriptive:
             # @st.cache_resource()
             def plot():                
                 fig, ax = plt.subplots()
-                sns.kdeplot(dash_df['AMT_INCOME_TOTAL'], log_scale=True, hue=dash_df['FLAG_OWN_REALTY'],)
+                sns.kdeplot(data=dash_df, x='AMT_INCOME_TOTAL', log_scale=True, hue='FLAG_OWN_REALTY')
                 plt.axvline(x=dash_df[dash_df.index==id].AMT_INCOME_TOTAL.values[0], ymax=0.95, color='firebrick', ls='--')
                 return fig
             st.pyplot(plot())
@@ -215,7 +214,7 @@ with descriptive:
             # @st.cache_resource()
             def plot():                
                 fig, ax = plt.subplots()
-                sns.kdeplot(dash_df['AMT_INCOME_TOTAL'], log_scale=True, hue=dash_df['NAME_EDUCATION_TYPE'],)
+                sns.kdeplot(data=dash_df, x='AMT_INCOME_TOTAL', log_scale=True, hue='NAME_EDUCATION_TYPE')
                 plt.axvline(x=dash_df[dash_df.index==id].AMT_INCOME_TOTAL.values[0], ymax=0.95, color='firebrick', ls='--')
                 return fig
             st.pyplot(plot())
@@ -224,7 +223,7 @@ with descriptive:
             # @st.cache_resource()
             def plot():                
                 fig, ax = plt.subplots()
-                sns.kdeplot(dash_df['AMT_INCOME_TOTAL'], log_scale=True, hue=dash_df['FLAG_OWN_CAR'],)
+                sns.kdeplot(data=dash_df, x='AMT_INCOME_TOTAL', log_scale=True, hue='FLAG_OWN_CAR')
                 plt.axvline(x=dash_df[dash_df.index==id].AMT_INCOME_TOTAL.values[0], ymax=0.95, color='firebrick', ls='--')
                 return fig
             st.pyplot(plot())
@@ -306,7 +305,7 @@ with descriptive:
             # @st.cache_data(hash_funcs={matplotlib.figure.Figure: lambda _: None})
             def plot():                
                 fig, ax = plt.subplots()
-                sns.kdeplot(dash_df['AMT_CREDIT'], label = 'Loan amount', log_scale=True, hue=dash_df['NAME_CONTRACT_TYPE'])
+                sns.kdeplot(data=dash_df, x='AMT_CREDIT', label = 'Loan amount', log_scale=True, hue='NAME_CONTRACT_TYPE')
                 plt.axvline(x=dash_df[dash_df.index==id].AMT_CREDIT.values[0], ymax=0.95, color='firebrick', ls='--')
                 return fig
             st.write(plot())
@@ -326,7 +325,7 @@ with descriptive:
             # @st.cache_data(hash_funcs={matplotlib.figure.Figure: lambda _: None})
             def plot():                
                 fig, ax = plt.subplots()
-                sns.kdeplot(dash_df['AMT_CREDIT'], log_scale=True, hue=dash_df['FLAG_OWN_REALTY'],)
+                sns.kdeplot(data=dash_df, x='AMT_CREDIT', log_scale=True, hue='FLAG_OWN_REALTY')
                 plt.axvline(x=dash_df[dash_df.index==id].AMT_CREDIT.values[0], ymax=0.95, color='firebrick', ls='--')
                 return fig
             st.write(plot())
