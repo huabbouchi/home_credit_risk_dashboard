@@ -81,7 +81,7 @@ with header:
     original_title = '<p style="font-size: 50px; color:Red; text-align: left "> <u>Home Credit Risk Estimator!</u> </p>'
     st.markdown(original_title, unsafe_allow_html=True)
     st.subheader('Welcome to the Home Credit Risk Estimator Dashboard:')
-    st.subheader('Desciptive, Score, Explanation & Comparaison')
+    st.subheader('Descriptive, Score, Explanation & Comparaison')
 
 ###########################################################################################################################
 ###########################################################################################################################
